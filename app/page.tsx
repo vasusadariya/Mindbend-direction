@@ -4,7 +4,7 @@ import { useState } from "react"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import CategoryDropdown from "@/components/category-dropdown"
-import { technicalEvents, managerialEvents, workshops, specialEvents } from "@/data/events"
+import { technicalEvents, managerialEvents, workshops, specialEvents, food } from "@/data/events"
 
 export default function Home() {
   // Track which category is currently expanded
@@ -66,6 +66,16 @@ export default function Home() {
             icon="sparkles"
             isExpanded={expandedCategory === "mega"}
             onToggle={() => handleToggleCategory("mega")}
+          />
+          <CategoryDropdown
+            id="food"
+            title="Food And Drinks"
+            events={food}
+            bgGradient="from-violet-900 to-purple-900"
+            accentColor="border-violet-500"
+            icon="sparkles"
+            isExpanded={expandedCategory === "food"}
+            onToggle={() => handleToggleCategory("food")}
           />
         </div>
       </main>
